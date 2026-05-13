@@ -190,25 +190,72 @@ export default function HomePage() {
             <p style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)' }}>Opciones para cada momento de tu viaje</p>
           </div>
           <div style={{ display: 'flex', gap: '8px' }}>
-            <button style={{ width: '32px', height: '32px', borderRadius: '50%', border: '1px solid var(--color-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'white' }}>
+            <button 
+              onClick={() => {
+                const container = document.getElementById('category-slider');
+                if (container) container.scrollBy({ left: -200, behavior: 'smooth' });
+              }}
+              style={{ width: '32px', height: '32px', borderRadius: '50%', border: '1px solid var(--color-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', backgroundColor: 'white' }}
+            >
               <ChevronLeft size={20} color="var(--color-dark-green)" />
             </button>
-            <button style={{ width: '32px', height: '32px', borderRadius: '50%', backgroundColor: 'var(--color-dark-green)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <button 
+              onClick={() => {
+                const container = document.getElementById('category-slider');
+                if (container) container.scrollBy({ left: 200, behavior: 'smooth' });
+              }}
+              style={{ width: '32px', height: '32px', borderRadius: '50%', backgroundColor: 'var(--color-dark-green)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+            >
               <ChevronRight size={20} color="white" />
             </button>
           </div>
         </div>
         
         {/* Slider Track */}
-        <div style={{ display: 'flex', gap: '16px', overflowX: 'auto', paddingBottom: '16px', scrollbarWidth: 'none' }}>
+        <div 
+          id="category-slider"
+          style={{ 
+            display: 'flex', 
+            gap: '16px', 
+            overflowX: 'auto', 
+            paddingBottom: '16px', 
+            scrollbarWidth: 'none',
+            scrollSnapType: 'x mandatory'
+          }}
+        >
           {[
-            "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=400&q=80",
-            "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=400&q=80",
-            "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=400&q=80"
-          ].map((src, idx) => (
-            <div key={idx} style={{ minWidth: '160px', height: '120px', borderRadius: '16px', overflow: 'hidden', position: 'relative' }}>
-              <Image src={src} alt="Category" fill style={{ objectFit: 'cover' }} />
-            </div>
+            { title: "Gastronomía", link: "/comer", image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80" },
+            { title: "Alojamientos", link: "/alojarse", image: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=400&q=80" },
+            { title: "Excursiones", link: "/aventuras", image: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=400&q=80" },
+            { title: "Guía Local", link: "/comercios", image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=400&q=80" }
+          ].map((cat, idx) => (
+            <Link 
+              href={cat.link} 
+              key={idx} 
+              style={{ 
+                minWidth: '160px', 
+                height: '120px', 
+                borderRadius: '16px', 
+                overflow: 'hidden', 
+                position: 'relative',
+                scrollSnapAlign: 'start',
+                display: 'block'
+              }}
+            >
+              <Image src={cat.image} alt={cat.title} fill style={{ objectFit: 'cover' }} />
+              <div style={{
+                position: 'absolute',
+                top: 0, left: 0, right: 0, bottom: 0,
+                background: 'linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.1) 100%)',
+                display: 'flex',
+                alignItems: 'flex-end',
+                padding: '12px'
+              }}>
+                <span style={{ color: 'white', fontWeight: 700, fontSize: '1rem', textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
+                  {cat.title}
+                </span>
+              </div>
+            </Link>
           ))}
         </div>
       </section>
