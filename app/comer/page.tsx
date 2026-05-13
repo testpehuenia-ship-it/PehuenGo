@@ -57,7 +57,7 @@ export default function ComerPage() {
     });
     
     message += `\n*Total: $${cartTotal}*`;
-    message += `\n\n_Pedido realizado vía PehuenGo_`;
+    message += `\n\n_Pedido realizado vía PehueniaGo_`;
     
     return `https://wa.me/${selectedComercio.whatsapp}?text=${encodeURIComponent(message)}`;
   }, [selectedComercio, cart, cartTotal]);
@@ -69,7 +69,7 @@ export default function ComerPage() {
       <div className="responsive-banner">
         <div className="banner-header">
           <div className="banner-title">
-            <span style={{ color: 'var(--color-green)' }}>PEHUEN</span>
+            <span style={{ color: 'var(--color-green)' }}>PEHUENIA</span>
             <span style={{ color: 'var(--color-orange)' }}>GO</span>
             <span style={{ color: 'white', margin: '0 8px' }}>-</span>
             <span style={{ color: 'white' }}>PEDIDOS ONLINE</span>

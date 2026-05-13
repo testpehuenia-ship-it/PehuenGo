@@ -10,7 +10,7 @@ export default function AventurasPage() {
   const categories = ["Trekking", "A. Acuaticas", "Cabalgatas", "Nieve", "Pesca", "Agencia de turismo"];
 
   const buildWhatsAppUrl = (aventura: Aventura) => {
-    const message = `*Hola ${aventura.name}!* \nTe contacto desde PehuenGo.\nQuisiera consultar más información y reservar la siguiente actividad: *${aventura.category}*.\n\n¡Muchas gracias!`;
+    const message = `*Hola ${aventura.name}!* \nTe contacto desde PehueniaGo.\nQuisiera consultar más información y reservar la siguiente actividad: *${aventura.category}*.\n\n¡Muchas gracias!`;
     return `https://wa.me/${aventura.whatsapp}?text=${encodeURIComponent(message)}`;
   };
 
@@ -21,7 +21,7 @@ export default function AventurasPage() {
       <div className="responsive-banner">
         <div className="banner-header">
           <div className="banner-title">
-            <span style={{ color: 'var(--color-green)' }}>PEHUEN</span>
+            <span style={{ color: 'var(--color-green)' }}>PEHUENIA</span>
             <span style={{ color: 'var(--color-orange)' }}>GO</span>
             <span style={{ color: 'white', margin: '0 8px' }}>-</span>
             <span style={{ color: 'white' }}>AVENTURAS</span>

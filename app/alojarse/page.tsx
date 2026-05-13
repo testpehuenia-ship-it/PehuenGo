@@ -10,7 +10,7 @@ export default function AlojarsePage() {
   const categories = ["Cabañas", "Hoteles", "Hostel", "Campings"];
 
   const buildWhatsAppUrl = (alojamiento: Alojamiento) => {
-    const message = `*Hola ${alojamiento.name}!* \nTe contacto desde PehuenGo.\nQuisiera consultar disponibilidad y tarifas para alojarme con ustedes.\n\n¡Muchas gracias!`;
+    const message = `*Hola ${alojamiento.name}!* \nTe contacto desde PehueniaGo.\nQuisiera consultar disponibilidad y tarifas para alojarme con ustedes.\n\n¡Muchas gracias!`;
     return `https://wa.me/${alojamiento.whatsapp}?text=${encodeURIComponent(message)}`;
   };
 
@@ -21,7 +21,7 @@ export default function AlojarsePage() {
       <div className="responsive-banner">
         <div className="banner-header">
           <div className="banner-title">
-            <span style={{ color: 'var(--color-green)' }}>PEHUEN</span>
+            <span style={{ color: 'var(--color-green)' }}>PEHUENIA</span>
             <span style={{ color: 'var(--color-orange)' }}>GO</span>
             <span style={{ color: 'white', margin: '0 8px' }}>-</span>
             <span style={{ color: 'white' }}>DORMIR</span>

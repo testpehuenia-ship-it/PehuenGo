@@ -1,5 +1,5 @@
 export const metadata = {
-  title: 'Excursiones y Actividades en Villa Pehuenia | PehuenGo',
+  title: 'Excursiones y Actividades en Villa Pehuenia | PehueniaGo',
   description: 'Reserva las mejores excursiones, paseos en barco, rafting y actividades de nieve en Villa Pehuenia.',
 };
 
@@ -42,7 +42,7 @@ export default function ExcursionesPage() {
             <h2 style={{ fontSize: '1.25rem', fontWeight: 700 }}>{exc.nombre}</h2>
             <p style={{ color: 'var(--color-text-muted)', flexGrow: 1 }}>{exc.desc}</p>
             
-            <a href={`https://wa.me/${exc.phone}?text=Hola!%20Quiero%20reservar%20una%20excursión%20(visto%20en%20PehuenGo)`} 
+            <a href={`https://wa.me/${exc.phone}?text=Hola!%20Quiero%20reservar%20una%20excursión%20(visto%20en%20PehueniaGo)`} 
                target="_blank" 
                rel="noopener noreferrer"
                className="btn-primary" 
