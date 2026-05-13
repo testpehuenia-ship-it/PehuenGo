@@ -2,7 +2,6 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Share2, Menu } from 'lucide-react';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -30,27 +29,24 @@ export default function Navbar() {
         
         {/* Left: Logo */}
         <Link href="/" className="logo-link" style={{ fontSize: '1.5rem' }}>
-          <span style={{ color: 'var(--color-dark-green)' }}>PEHUEN</span>
+          <span style={{ color: 'var(--color-green)' }}>PEHUEN</span>
           <span style={{ color: 'var(--color-orange)' }}>GO</span>
         </Link>
         
-        {/* Center: Desktop Nav (hidden on mobile mockup, but kept for desktop) */}
-        <nav className="main-nav" style={{ display: 'none' }}>
+        {/* Center: Desktop Nav */}
+        <nav className="main-nav">
           <Link href="/comer" className={`nav-link ${pathname === '/comer' ? 'active' : ''}`}>Qué Comer</Link>
           <Link href="/alojarse" className={`nav-link ${pathname === '/alojarse' ? 'active' : ''}`}>Dormir</Link>
           <Link href="/aventuras" className={`nav-link ${pathname === '/aventuras' ? 'active' : ''}`}>Aventuras</Link>
           <Link href="/comercios" className={`nav-link ${pathname === '/comercios' ? 'active' : ''}`}>Guía Local</Link>
+          <button 
+            onClick={handleShare} 
+            className="nav-link" 
+            style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: 'inherit' }}
+          >
+            Compartir
+          </button>
         </nav>
-
-        {/* Right: Icons */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-          <button onClick={handleShare} style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <Share2 size={24} color="var(--color-dark-green)" />
-          </button>
-          <button style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <Menu size={28} color="var(--color-dark-green)" />
-          </button>
-        </div>
         
       </div>
     </header>
