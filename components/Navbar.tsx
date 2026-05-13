@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Leaf } from 'lucide-react';
+import Image from 'next/image';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -30,7 +30,7 @@ export default function Navbar() {
         
         {/* Left: Logo */}
         <Link href="/" className="logo-link" style={{ fontSize: '2.2rem', gap: '8px' }}>
-          <Leaf color="var(--color-green)" size={32} />
+          <Image src="/images/logo.png" alt="Logo PehuenGo" width={40} height={40} style={{ objectFit: 'contain' }} />
           <div>
             <span style={{ color: 'var(--color-green)' }}>PEHUEN</span>
             <span style={{ color: 'var(--color-orange)' }}>GO</span>
