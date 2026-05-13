@@ -1,8 +1,11 @@
 :root {
   /* PehuenGo Identity Colors */
   --color-green: #38b000;
-  --color-orange: #ff8500;
+  --color-orange: #d35400; /* Adjusted to match mockup orange */
   --color-celeste: #00b4d8;
+  --color-dark-green: #14352a; /* For excursiones button */
+  --color-purple: #5c3a7a; /* For comercios button */
+  --color-light-green: #689f38; /* For alojamiento button */
   
   --color-primary: var(--color-green);
   --color-secondary: var(--color-orange);
