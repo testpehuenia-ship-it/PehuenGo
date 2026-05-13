@@ -25,7 +25,7 @@ const caveat = Caveat({
 });
 
 export const metadata: Metadata = {
-  title: "PehueniaGo | Guía y Delivery en Villa Pehuenia",
+  title: "PehueniaGO | Guía y Delivery en Villa Pehuenia",
   description: "Descubre dónde comer, alojarte y qué hacer en Villa Pehuenia. Pide comida directo por WhatsApp y reserva excursiones al instante.",
   keywords: ["Villa Pehuenia", "turismo", "delivery", "comida", "cabañas", "excursiones", "qué hacer", "dónde comer"],
 };

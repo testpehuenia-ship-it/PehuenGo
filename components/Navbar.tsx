@@ -11,7 +11,7 @@ export default function Navbar() {
     if (navigator.share) {
       try {
         await navigator.share({
-          title: 'PehueniaGo',
+          title: 'PehueniaGO',
           text: 'Descubrí todo Pehuenia en un solo lugar: comida, alojamiento y excursiones.',
           url: window.location.origin,
         });
@@ -30,9 +30,9 @@ export default function Navbar() {
         
         {/* Left: Logo */}
         <Link href="/" className="logo-link" style={{ fontSize: '2.2rem', gap: '8px' }}>
-          <Image src="/images/logo.png" alt="Logo PehueniaGo" width={40} height={40} style={{ objectFit: 'contain' }} />
+          <Image src="/images/logo.png" alt="Logo PehueniaGO" width={40} height={40} style={{ objectFit: 'contain' }} />
           <div>
-            <span style={{ color: 'var(--color-green)' }}>PEHUENIA</span>
+            <span style={{ color: 'var(--color-green)' }}>Pehuenia</span>
             <span style={{ color: 'var(--color-orange)' }}>GO</span>
           </div>
         </Link>

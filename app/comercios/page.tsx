@@ -36,7 +36,7 @@ export default function ComerciosPage() {
 
         <div style={{ position: 'relative', zIndex: 2 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
-            <span style={{ color: 'var(--color-green)', fontWeight: 800, fontSize: '1.4rem' }}>PEHUENIA</span>
+            <span style={{ color: 'var(--color-green)', fontWeight: 800, fontSize: '1.4rem' }}>Pehuenia</span>
             <span style={{ color: 'var(--color-orange)', fontWeight: 800, fontSize: '1.4rem' }}>GO</span>
             <span style={{ color: 'white', margin: '0 4px' }}>|</span>
             <span style={{ color: 'white', fontWeight: 600, fontSize: '1.2rem', letterSpacing: '1px' }}>GUÍA LOCAL</span>
