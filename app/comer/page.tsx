@@ -8,7 +8,14 @@ export default function ComerPage() {
   const [selectedComercio, setSelectedComercio] = useState<Comercio | null>(null);
   const [cart, setCart] = useState<{ [key: string]: number }>({});
 
-  const categories = ["Pizzería", "Hamburguesa", "Cervecería", "Roticería", "Restaurante", "Supermercado"];
+  const categoryBanners = [
+    { cat: "Pizzería", color: "#e63946", bgImage: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80" },
+    { cat: "Hamburguesa", color: "#f4a261", bgImage: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80" },
+    { cat: "Cervecería", color: "#e9c46a", bgImage: "https://images.unsplash.com/photo-1532634922-8fe0b757fb13?auto=format&fit=crop&w=800&q=80" },
+    { cat: "Roticería", color: "#e76f51", bgImage: "https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?auto=format&fit=crop&w=800&q=80" },
+    { cat: "Restaurante", color: "#2a9d8f", bgImage: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80" },
+    { cat: "Supermercado", color: "#264653", bgImage: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80" }
+  ];
 
   const addToCart = (itemId: string) => {
     setCart(prev => ({
@@ -70,14 +77,7 @@ export default function ComerPage() {
           <div className="banner-subtitle">LAS MEJORES OPCIONES</div>
         </div>
         <div className="banner-categories">
-          {[
-            { cat: "Pizzería", color: "#e63946", bgImage: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=800&q=80" },
-            { cat: "Hamburguesa", color: "#f4a261", bgImage: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=800&q=80" },
-            { cat: "Cervecería", color: "#e9c46a", bgImage: "https://images.unsplash.com/photo-1532634922-8fe0b757fb13?auto=format&fit=crop&w=800&q=80" },
-            { cat: "Roticería", color: "#e76f51", bgImage: "https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?auto=format&fit=crop&w=800&q=80" },
-            { cat: "Restaurante", color: "#2a9d8f", bgImage: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=800&q=80" },
-            { cat: "Supermercado", color: "#264653", bgImage: "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=800&q=80" }
-          ].map((item) => (
+          {categoryBanners.map((item) => (
             <a 
               href={`#${item.cat.toLowerCase()}`} 
               key={item.cat} 
@@ -93,25 +93,53 @@ export default function ComerPage() {
 
       <h1 className="section-title">¿Qué pedimos hoy?</h1>
 
-      {/* Listado por Categorías */}
-      {categories.map(category => (
-        <section key={category} id={category.toLowerCase()} style={{ marginBottom: '60px' }}>
-          <h2 style={{ 
-            fontSize: '1.5rem', 
-            borderLeft: '5px solid var(--color-orange)', 
-            paddingLeft: '12px',
+      {/* Listado por Categorías con Banners Ilustrativos */}
+      {categoryBanners.map(item => (
+        <section key={item.cat} id={item.cat.toLowerCase()} style={{ marginBottom: '60px' }}>
+          
+          {/* Banner de Cabecera de la Categoría */}
+          <div style={{
+            position: 'relative',
+            height: '140px',
+            borderRadius: 'var(--radius-md)',
+            overflow: 'hidden',
             marginBottom: '24px',
-            color: 'var(--color-text-main)'
+            backgroundImage: `url(${item.bgImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            boxShadow: 'var(--shadow-md)',
+            display: 'flex',
+            alignItems: 'center',
+            paddingLeft: '24px',
+            borderLeft: `8px solid ${item.color}`
           }}>
-            {category}
-          </h2>
+            <div style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              backgroundColor: 'rgba(0,0,0,0.5)',
+              zIndex: 1
+            }}></div>
+            <h2 style={{ 
+              fontSize: '2rem', 
+              fontWeight: 800,
+              color: 'white',
+              zIndex: 2,
+              textShadow: '0 2px 8px rgba(0,0,0,0.8)',
+              letterSpacing: '1px'
+            }}>
+              {item.cat}
+            </h2>
+          </div>
           
           <div style={{
             display: 'grid',
             gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))',
             gap: '24px'
           }}>
-            {COMERCIOS.filter(c => c.category === category).map(comercio => (
+            {COMERCIOS.filter(c => c.category === item.cat).map(comercio => (
               <button key={comercio.id} style={{
                 backgroundColor: 'white',
                 borderRadius: 'var(--radius-md)',
@@ -138,7 +166,7 @@ export default function ComerPage() {
                 </div>
               </button>
             ))}
-            {COMERCIOS.filter(c => c.category === category).length === 0 && (
+            {COMERCIOS.filter(c => c.category === item.cat).length === 0 && (
               <p style={{ color: 'var(--color-text-muted)', fontStyle: 'italic' }}>Próximamente más comercios en esta categoría.</p>
             )}
           </div>
