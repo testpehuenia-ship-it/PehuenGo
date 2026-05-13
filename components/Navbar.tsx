@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
+import { Leaf } from 'lucide-react';
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -24,17 +25,21 @@ export default function Navbar() {
   };
 
   return (
-    <header className="site-header" style={{ padding: '0 16px' }}>
-      <div className="container header-container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', height: '60px', padding: 0 }}>
+    <header className="site-header">
+      <div className="container header-container">
         
         {/* Left: Logo */}
-        <Link href="/" className="logo-link" style={{ fontSize: '1.5rem' }}>
-          <span style={{ color: 'var(--color-green)' }}>PEHUEN</span>
-          <span style={{ color: 'var(--color-orange)' }}>GO</span>
+        <Link href="/" className="logo-link" style={{ fontSize: '2.2rem', gap: '8px' }}>
+          <Leaf color="var(--color-green)" size={32} />
+          <div>
+            <span style={{ color: 'var(--color-green)' }}>PEHUEN</span>
+            <span style={{ color: 'var(--color-orange)' }}>GO</span>
+          </div>
         </Link>
         
         {/* Center: Desktop Nav */}
         <nav className="main-nav">
+          <Link href="/" className={`nav-link ${pathname === '/' ? 'active' : ''}`}>Inicio</Link>
           <Link href="/comer" className={`nav-link ${pathname === '/comer' ? 'active' : ''}`}>Qué Comer</Link>
           <Link href="/alojarse" className={`nav-link ${pathname === '/alojarse' ? 'active' : ''}`}>Dormir</Link>
           <Link href="/aventuras" className={`nav-link ${pathname === '/aventuras' ? 'active' : ''}`}>Aventuras</Link>
@@ -42,7 +47,7 @@ export default function Navbar() {
           <button 
             onClick={handleShare} 
             className="nav-link" 
-            style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: 'inherit' }}
+            style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px', fontSize: 'inherit', fontFamily: 'inherit', border: 'none', background: 'none', cursor: 'pointer', padding: '8px 4px', borderRadius: '8px', backgroundColor: '#f4f4f4' }}
           >
             Compartir
           </button>
