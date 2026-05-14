@@ -20,8 +20,7 @@ export default function MapaPage() {
         center: [-71.1667, -38.8833], // Villa Pehuenia
         zoom: 13,
         pitch: 45, // Tilt for 3D effect
-        bearing: -17,
-        antialias: true
+        bearing: -17
       });
 
       // Add navigation controls (zoom, rotate)
