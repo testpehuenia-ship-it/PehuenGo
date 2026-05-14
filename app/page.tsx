@@ -37,6 +37,7 @@ export const CATEGORIES_DATA = [
 export default function HomePage() {
   const [bgIndex, setBgIndex] = useState(0);
   const [adImage, setAdImage] = useState(CATEGORIES_DATA[0].image);
+  const [adImage2, setAdImage2] = useState(CATEGORIES_DATA[1].image);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -45,8 +46,13 @@ export default function HomePage() {
 
     const timeout = setTimeout(() => {
       const adInterval = setInterval(() => {
-        const randomIndex = Math.floor(Math.random() * CATEGORIES_DATA.length);
-        setAdImage(CATEGORIES_DATA[randomIndex].image);
+        const randomIndex1 = Math.floor(Math.random() * CATEGORIES_DATA.length);
+        let randomIndex2 = Math.floor(Math.random() * CATEGORIES_DATA.length);
+        if (randomIndex2 === randomIndex1) {
+          randomIndex2 = (randomIndex2 + 1) % CATEGORIES_DATA.length;
+        }
+        setAdImage(CATEGORIES_DATA[randomIndex1].image);
+        setAdImage2(CATEGORIES_DATA[randomIndex2].image);
       }, 8000);
       return () => clearInterval(adInterval);
     }, 4000);
@@ -285,7 +291,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Ad Banner */}
+      {/* Ad Banner 1 */}
       <section className="container" style={{ padding: '0 20px' }}>
         <div className="ad-banner-container">
           <div 
@@ -306,6 +312,30 @@ export default function HomePage() {
             </h2>
             <p style={{ color: 'var(--color-orange)', fontSize: '1.2rem', marginTop: '8px', fontWeight: 700 }}>
               Haga crecer su negocio con PehueniaGO
+            </p>
+          </a>
+        </div>
+
+        {/* Ad Banner 2 */}
+        <div className="ad-banner-container" style={{ marginTop: '0' }}>
+          <div 
+            className="ad-slide ad-slide-1" 
+            style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${adImage2}')`, animationDelay: '4s' }}
+          >
+            <h2 style={{ fontSize: '2.5rem', margin: 0, textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
+              <span style={{ color: 'var(--color-green)' }}>Pehuenia</span>
+              <span style={{ color: 'var(--color-orange)' }}>GO</span>
+            </h2>
+            <p style={{ color: 'white', fontSize: '1.2rem', marginTop: '8px', fontWeight: 600, textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
+              Su marca aquí
+            </p>
+          </div>
+          <a href="https://wa.me/5492942661000?text=Hola%20quiero%20publicitar%20en%20PehueniaGO" target="_blank" rel="noopener noreferrer" className="ad-slide ad-slide-2" style={{ textDecoration: 'none', animationDelay: '4s' }}>
+            <h2 style={{ fontSize: '2.5rem', margin: 0, color: 'var(--color-green)', fontFamily: 'var(--font-oswald), sans-serif', textTransform: 'uppercase' }}>
+              Espacio Disponible
+            </h2>
+            <p style={{ color: 'var(--color-orange)', fontSize: '1.2rem', marginTop: '8px', fontWeight: 700 }}>
+              Miles de turistas lo verán
             </p>
           </a>
         </div>
