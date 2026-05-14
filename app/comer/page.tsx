@@ -1,8 +1,10 @@
 'use client';
 
-import { useState, useMemo } from 'react';
+import React, { useState, useMemo } from 'react';
 import Image from 'next/image';
 import { COMERCIOS, Comercio, MenuItem } from '@/data/comercios';
+import PublicityBanner from '@/components/PublicityBanner';
+import AdhereBanner from '@/components/AdhereBanner';
 
 export default function ComerPage() {
   const [selectedComercio, setSelectedComercio] = useState<Comercio | null>(null);
@@ -90,11 +92,14 @@ export default function ComerPage() {
           ))}
         </div>
       </div>
+      
+      <PublicityBanner height="100px" />
 
       <h1 className="section-title">¿Qué pedimos hoy?</h1>
 
       {/* Listado por Categorías con Banners Ilustrativos */}
-      {categoryBanners.map(item => (
+      {categoryBanners.map((item, index) => (
+        <React.Fragment key={item.cat}>
         <section key={item.cat} id={item.cat.toLowerCase()} style={{ marginBottom: '60px' }}>
           
           {/* Banner de Cabecera de la Categoría */}
@@ -171,7 +176,15 @@ export default function ComerPage() {
             )}
           </div>
         </section>
+        {/* Ad between categories (approx middle) */}
+        {index === Math.floor(categoryBanners.length / 2) - 1 && (
+          <PublicityBanner delay="2s" />
+        )}
+      </React.Fragment>
       ))}
+
+      <PublicityBanner delay="4s" />
+      <AdhereBanner />
 
       {/* Modal de Menú (Estilo PedidosYa) */}
       {selectedComercio && (

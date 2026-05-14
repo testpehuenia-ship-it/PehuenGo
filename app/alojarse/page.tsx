@@ -1,8 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { ALOJAMIENTOS, Alojamiento } from '@/data/alojamientos';
+import PublicityBanner from '@/components/PublicityBanner';
+import AdhereBanner from '@/components/AdhereBanner';
 
 export default function AlojarsePage() {
   const [selectedAlojamiento, setSelectedAlojamiento] = useState<Alojamiento | null>(null);
@@ -47,11 +49,14 @@ export default function AlojarsePage() {
           ))}
         </div>
       </div>
+      
+      <PublicityBanner height="100px" />
 
       <h1 className="section-title">¿Dónde vas a dormir?</h1>
 
       {/* Listado por Categorías */}
-      {categories.map(category => (
+      {categories.map((category, index) => (
+        <React.Fragment key={category}>
         <section key={category} id={category.toLowerCase()} style={{ marginBottom: '60px' }}>
           <h2 style={{ 
             fontSize: '1.5rem', 
@@ -115,7 +120,15 @@ export default function AlojarsePage() {
             )}
           </div>
         </section>
+        {/* Ad between categories (approx middle) */}
+        {index === Math.floor(categories.length / 2) - 1 && (
+          <PublicityBanner delay="2s" />
+        )}
+      </React.Fragment>
       ))}
+
+      <PublicityBanner delay="4s" />
+      <AdhereBanner />
 
       {/* Modal de Detalles del Alojamiento */}
       {selectedAlojamiento && (

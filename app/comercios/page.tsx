@@ -2,6 +2,8 @@
 
 import React from 'react';
 import { GUIA_CATEGORIAS, GUIA_ITEMS } from '@/data/guia';
+import PublicityBanner from '@/components/PublicityBanner';
+import AdhereBanner from '@/components/AdhereBanner';
 
 export default function ComerciosPage() {
   return (
@@ -47,6 +49,8 @@ export default function ComerciosPage() {
         </div>
       </div>
 
+      <PublicityBanner height="100px" />
+
       {/* Botones de Anclaje Rápido */}
       <div style={{
         display: 'flex',
@@ -81,10 +85,11 @@ export default function ComerciosPage() {
       </div>
 
       {/* Renderizado de Secciones */}
-      {GUIA_CATEGORIAS.map(categoria => {
+      {GUIA_CATEGORIAS.map((categoria, index) => {
         const items = GUIA_ITEMS.filter(i => i.categoria === categoria);
         
         return (
+          <React.Fragment key={categoria}>
           <section key={categoria} id={categoria.replace(/ /g, '-').toLowerCase()} style={{ marginBottom: '50px' }}>
             <h2 style={{
               fontSize: '1.4rem',
@@ -158,8 +163,16 @@ export default function ComerciosPage() {
               ))}
             </div>
           </section>
+          {/* Ad between categories (approx middle) */}
+          {index === Math.floor(GUIA_CATEGORIAS.length / 2) - 1 && (
+            <PublicityBanner delay="2s" />
+          )}
+        </React.Fragment>
         );
       })}
+
+      <PublicityBanner delay="4s" />
+      <AdhereBanner />
 
     </div>
   );

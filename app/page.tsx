@@ -9,6 +9,8 @@ import {
   Clock, ShieldCheck, Heart, HeartHandshake,
   ChevronRight, ChevronLeft
 } from 'lucide-react';
+import PublicityBanner from '@/components/PublicityBanner';
+import AdhereBanner from '@/components/AdhereBanner';
 
 const BACKGROUND_IMAGES = [
   "/images/bg_slider_1.jpg",
@@ -252,30 +254,7 @@ export default function HomePage() {
       </section>
 
       {/* Ad Banner (Half Height) */}
-      <section className="container" style={{ padding: '10px 20px 0 20px' }}>
-        <div className="ad-banner-container" style={{ height: '100px', margin: '0 auto 10px auto' }}>
-          <div 
-            className="ad-slide ad-slide-1" 
-            style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${adImage3}')` }}
-          >
-            <h2 style={{ fontSize: '1.5rem', margin: 0, textShadow: '2px 2px 4px rgba(0,0,0,0.8)' }}>
-              <span style={{ color: 'var(--color-green)' }}>Pehuenia</span>
-              <span style={{ color: 'var(--color-orange)' }}>GO</span>
-            </h2>
-            <p style={{ color: 'white', fontSize: '0.9rem', marginTop: '4px', fontWeight: 600, textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
-              Publicite Aquí
-            </p>
-          </div>
-          <a href="https://wa.me/5492942661000?text=Hola%20quiero%20publicitar%20en%20PehueniaGO" target="_blank" rel="noopener noreferrer" className="ad-slide ad-slide-2" style={{ textDecoration: 'none' }}>
-            <h2 style={{ fontSize: '1.5rem', margin: 0, color: 'var(--color-green)', fontFamily: 'var(--font-oswald), sans-serif', textTransform: 'uppercase' }}>
-              Publicite Aquí
-            </h2>
-            <p style={{ color: 'var(--color-orange)', fontSize: '0.9rem', marginTop: '4px', fontWeight: 700 }}>
-              Haga crecer su negocio
-            </p>
-          </a>
-        </div>
-      </section>
+      <PublicityBanner height="100px" />
 
       {/* 4. BOTTOM CATEGORIES SLIDER */}
       <section style={{ padding: '30px 20px', maxWidth: '600px', margin: '0 auto' }}>
@@ -350,55 +329,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Ad Banner 1 */}
-      <section className="container" style={{ padding: '0 20px' }}>
-        <div className="ad-banner-container">
-          <div 
-            className="ad-slide ad-slide-1" 
-            style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${adImage}')` }}
-          >
-            <h2 style={{ fontSize: '2.5rem', margin: 0, textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
-              <span style={{ color: 'var(--color-green)' }}>Pehuenia</span>
-              <span style={{ color: 'var(--color-orange)' }}>GO</span>
-            </h2>
-            <p style={{ color: 'white', fontSize: '1.2rem', marginTop: '8px', fontWeight: 600, textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
-              La guía local
-            </p>
-          </div>
-          <a href="https://wa.me/5492942661000?text=Hola%20quiero%20publicitar%20en%20PehueniaGO" target="_blank" rel="noopener noreferrer" className="ad-slide ad-slide-2" style={{ textDecoration: 'none' }}>
-            <h2 style={{ fontSize: '2.5rem', margin: 0, color: 'var(--color-green)', fontFamily: 'var(--font-oswald), sans-serif', textTransform: 'uppercase' }}>
-              Publicite Aquí
-            </h2>
-            <p style={{ color: 'var(--color-orange)', fontSize: '1.2rem', marginTop: '8px', fontWeight: 700 }}>
-              Haga crecer su negocio con PehueniaGO
-            </p>
-          </a>
-        </div>
-
-        {/* Ad Banner 2 */}
-        <div className="ad-banner-container" style={{ marginTop: '0' }}>
-          <div 
-            className="ad-slide ad-slide-1" 
-            style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${adImage2}')`, animationDelay: '4s' }}
-          >
-            <h2 style={{ fontSize: '2.5rem', margin: 0, textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
-              <span style={{ color: 'var(--color-green)' }}>Pehuenia</span>
-              <span style={{ color: 'var(--color-orange)' }}>GO</span>
-            </h2>
-            <p style={{ color: 'white', fontSize: '1.2rem', marginTop: '8px', fontWeight: 600, textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
-              Su marca aquí
-            </p>
-          </div>
-          <a href="https://wa.me/5492942661000?text=Hola%20quiero%20publicitar%20en%20PehueniaGO" target="_blank" rel="noopener noreferrer" className="ad-slide ad-slide-2" style={{ textDecoration: 'none', animationDelay: '4s' }}>
-            <h2 style={{ fontSize: '2.5rem', margin: 0, color: 'var(--color-green)', fontFamily: 'var(--font-oswald), sans-serif', textTransform: 'uppercase' }}>
-              Espacio Disponible
-            </h2>
-            <p style={{ color: 'var(--color-orange)', fontSize: '1.2rem', marginTop: '8px', fontWeight: 700 }}>
-              Miles de turistas lo verán
-            </p>
-          </a>
-        </div>
+      {/* Advertising Banners */}
+      <section style={{ padding: '0 20px' }}>
+        <PublicityBanner delay="0s" />
+        <PublicityBanner delay="4s" />
       </section>
+
+      <AdhereBanner />
     </div>
   );
 }
