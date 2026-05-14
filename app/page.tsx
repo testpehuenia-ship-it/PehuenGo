@@ -229,20 +229,7 @@ export default function HomePage() {
             height={160} 
             style={{ width: '100%', height: 'auto', display: 'block' }} 
           />
-          {/* Pulsing Phone Number Highlight Overlay */}
-          <div style={{
-            position: 'absolute',
-            right: '9%',
-            top: '55%',
-            transform: 'translateY(-50%)',
-            color: '#4a3728',
-            fontSize: 'clamp(0.7rem, 2.8vw, 1.3rem)',
-            fontWeight: 900,
-            letterSpacing: '1px',
-            pointerEvents: 'none'
-          }} className="phone-highlight">
-            2944203306
-          </div>
+
         </a>
       </section>
 
