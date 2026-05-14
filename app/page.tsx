@@ -232,11 +232,13 @@ export default function HomePage() {
           {/* Pulsing Phone Number Highlight Overlay */}
           <div style={{
             position: 'absolute',
-            right: '12%',
-            top: '46%',
+            right: '9%',
+            top: '55%',
+            transform: 'translateY(-50%)',
             color: '#4a3728',
-            fontSize: '1.2rem',
-            fontWeight: 800,
+            fontSize: 'clamp(0.7rem, 2.8vw, 1.3rem)',
+            fontWeight: 900,
+            letterSpacing: '1px',
             pointerEvents: 'none'
           }} className="phone-highlight">
             2944203306
