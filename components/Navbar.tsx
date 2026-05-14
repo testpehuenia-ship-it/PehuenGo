@@ -7,23 +7,6 @@ import Image from 'next/image';
 export default function Navbar() {
   const pathname = usePathname();
 
-  const handleShare = async () => {
-    if (navigator.share) {
-      try {
-        await navigator.share({
-          title: 'PehueniaGO',
-          text: 'Descubrí todo Pehuenia en un solo lugar: comida, alojamiento y aventuras.',
-          url: window.location.origin,
-        });
-      } catch (error) {
-        console.error('Error sharing:', error);
-      }
-    } else {
-      // Fallback if Web Share API is not supported
-      alert(`Compartí esta URL: ${window.location.origin}`);
-    }
-  };
-
   return (
     <header className="site-header">
       <div className="container header-container">
@@ -44,13 +27,7 @@ export default function Navbar() {
           <Link href="/alojarse" className={`nav-link ${pathname === '/alojarse' ? 'active' : ''}`}>Dormir</Link>
           <Link href="/aventuras" className={`nav-link ${pathname === '/aventuras' ? 'active' : ''}`}>Aventuras</Link>
           <Link href="/comercios" className={`nav-link ${pathname === '/comercios' ? 'active' : ''}`}>Guía Local</Link>
-          <button 
-            onClick={handleShare} 
-            className="nav-link" 
-            style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '4px', fontSize: 'inherit', fontFamily: 'inherit', border: 'none', background: 'none', cursor: 'pointer', padding: '8px 4px', borderRadius: '8px', backgroundColor: '#f4f4f4' }}
-          >
-            Compartir
-          </button>
+          <Link href="/mapa" className={`nav-link ${pathname === '/mapa' ? 'active' : ''}`}>Mapa y Rutas</Link>
         </nav>
         
       </div>
