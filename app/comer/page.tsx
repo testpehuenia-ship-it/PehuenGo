@@ -4,7 +4,6 @@ import React, { useState, useMemo } from 'react';
 import Image from 'next/image';
 import { COMERCIOS, Comercio, MenuItem } from '@/data/comercios';
 import PublicityBanner from '@/components/PublicityBanner';
-import AdhereBanner from '@/components/AdhereBanner';
 
 export default function ComerPage() {
   const [selectedComercio, setSelectedComercio] = useState<Comercio | null>(null);
@@ -184,7 +183,6 @@ export default function ComerPage() {
       ))}
 
       <PublicityBanner delay="4s" />
-      <AdhereBanner />
 
       {/* Modal de Menú (Estilo PedidosYa) */}
       {selectedComercio && (

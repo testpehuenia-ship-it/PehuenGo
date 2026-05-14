@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import CommercialBanner from "@/components/CommercialBanner";
+import AdhereBanner from "@/components/AdhereBanner";
 
 export default function RootLayout({
   children,
@@ -46,7 +46,7 @@ export default function RootLayout({
         <main style={{ minHeight: "calc(100vh - 140px)" }}>
           {children}
         </main>
-        <CommercialBanner />
+        <AdhereBanner />
         <Footer />
       </body>
     </html>

@@ -10,7 +10,6 @@ import {
   ChevronRight, ChevronLeft
 } from 'lucide-react';
 import PublicityBanner from '@/components/PublicityBanner';
-import AdhereBanner from '@/components/AdhereBanner';
 
 const BACKGROUND_IMAGES = [
   "/images/bg_slider_1.jpg",
@@ -334,8 +333,6 @@ export default function HomePage() {
         <PublicityBanner delay="0s" />
         <PublicityBanner delay="4s" />
       </section>
-
-      <AdhereBanner />
     </div>
   );
 }

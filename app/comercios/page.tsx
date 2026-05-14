@@ -3,7 +3,6 @@
 import React from 'react';
 import { GUIA_CATEGORIAS, GUIA_ITEMS } from '@/data/guia';
 import PublicityBanner from '@/components/PublicityBanner';
-import AdhereBanner from '@/components/AdhereBanner';
 
 export default function ComerciosPage() {
   return (
@@ -172,7 +171,6 @@ export default function ComerciosPage() {
       })}
 
       <PublicityBanner delay="4s" />
-      <AdhereBanner />
 
     </div>
   );

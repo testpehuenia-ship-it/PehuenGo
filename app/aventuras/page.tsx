@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { AVENTURAS, Aventura } from '@/data/aventuras';
 import PublicityBanner from '@/components/PublicityBanner';
-import AdhereBanner from '@/components/AdhereBanner';
 
 export default function AventurasPage() {
   const [selectedAventura, setSelectedAventura] = useState<Aventura | null>(null);
@@ -127,7 +126,6 @@ export default function AventurasPage() {
       ))}
 
       <PublicityBanner delay="4s" />
-      <AdhereBanner />
 
       {/* Modal de Detalles de la Aventura */}
       {selectedAventura && (

@@ -4,7 +4,6 @@ import React, { useEffect, useRef } from 'react';
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import PublicityBanner from '@/components/PublicityBanner';
-import AdhereBanner from '@/components/AdhereBanner';
 
 export default function MapaPage() {
   const mapContainer = useRef<HTMLDivElement>(null);
@@ -109,7 +108,6 @@ export default function MapaPage() {
       </section>
 
       <PublicityBanner delay="4s" />
-      <AdhereBanner />
     </div>
   );
 }

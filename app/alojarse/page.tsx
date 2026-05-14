@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import Image from 'next/image';
 import { ALOJAMIENTOS, Alojamiento } from '@/data/alojamientos';
 import PublicityBanner from '@/components/PublicityBanner';
-import AdhereBanner from '@/components/AdhereBanner';
 
 export default function AlojarsePage() {
   const [selectedAlojamiento, setSelectedAlojamiento] = useState<Alojamiento | null>(null);
@@ -128,7 +127,6 @@ export default function AlojarsePage() {
       ))}
 
       <PublicityBanner delay="4s" />
-      <AdhereBanner />
 
       {/* Modal de Detalles del Alojamiento */}
       {selectedAlojamiento && (
