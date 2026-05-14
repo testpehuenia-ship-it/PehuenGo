@@ -270,6 +270,29 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Ad Banner */}
+      <section className="container" style={{ padding: '0 20px' }}>
+        <div className="ad-banner-container">
+          <div className="ad-slide ad-slide-1">
+            <h2 style={{ fontSize: '2.5rem', margin: 0, textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
+              <span style={{ color: 'var(--color-green)' }}>Pehuenia</span>
+              <span style={{ color: 'var(--color-orange)' }}>GO</span>
+            </h2>
+            <p style={{ color: 'white', fontSize: '1.2rem', marginTop: '8px', fontWeight: 600, textShadow: '1px 1px 4px rgba(0,0,0,0.8)' }}>
+              La guía local
+            </p>
+          </div>
+          <a href="https://wa.me/5492942661000?text=Hola%20quiero%20publicitar%20en%20PehueniaGO" target="_blank" rel="noopener noreferrer" className="ad-slide ad-slide-2" style={{ textDecoration: 'none' }}>
+            <h2 style={{ fontSize: '2.5rem', margin: 0, color: 'var(--color-green)', fontFamily: 'var(--font-oswald), sans-serif', textTransform: 'uppercase' }}>
+              Publicite Aquí
+            </h2>
+            <p style={{ color: 'var(--color-orange)', fontSize: '1.2rem', marginTop: '8px', fontWeight: 700 }}>
+              Haga crecer su negocio con PehueniaGO
+            </p>
+          </a>
+        </div>
+      </section>
+
       {/* 5. FIXED BOTTOM BANNER: COMERCIO ADHERITE */}
       <a 
         href="https://wa.me/5492942661000?text=Hola%20quiero%20adherir%20mi%20comercio%20o%20emprendimiento" 
