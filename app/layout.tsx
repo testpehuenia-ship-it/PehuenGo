@@ -26,12 +26,13 @@ const caveat = Caveat({
 
 export const metadata: Metadata = {
   title: "PehueniaGO | Guía y Delivery en Villa Pehuenia",
-  description: "Descubre dónde comer, alojarte y qué hacer en Villa Pehuenia. Pide comida directo por WhatsApp y reserva excursiones al instante.",
-  keywords: ["Villa Pehuenia", "turismo", "delivery", "comida", "cabañas", "excursiones", "qué hacer", "dónde comer"],
+  description: "Descubre dónde comer, alojarte y qué hacer en Villa Pehuenia. Pide comida directo por WhatsApp y reserva aventuras al instante.",
+  keywords: ["Villa Pehuenia", "turismo", "delivery", "comida", "cabañas", "aventuras", "qué hacer", "dónde comer"],
 };
 
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import CommercialBanner from "@/components/CommercialBanner";
 
 export default function RootLayout({
   children,
@@ -45,6 +46,7 @@ export default function RootLayout({
         <main style={{ minHeight: "calc(100vh - 140px)" }}>
           {children}
         </main>
+        <CommercialBanner />
         <Footer />
       </body>
     </html>

@@ -373,3 +373,34 @@ button {
   50%, 90% { opacity: 1; transform: scale(1) translateY(0); filter: blur(0px); }
   95%, 100% { opacity: 0; transform: scale(1.1) translateY(-20px); filter: blur(4px); }
 }
+
+/* Animations for Huellitas Banner */
+@keyframes dogWave {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(-20deg); }
+}
+
+@keyframes morphPaw {
+  0%, 40% { opacity: 1; transform: scale(1); }
+  45%, 95% { opacity: 0; transform: scale(0.8); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes morphScissors {
+  0%, 40% { opacity: 0; transform: scale(0.8); }
+  45%, 90% { opacity: 1; transform: scale(1); }
+  95%, 100% { opacity: 0; transform: scale(0.8); }
+}
+
+.waving-paw {
+  transform-origin: bottom center;
+  animation: dogWave 1s infinite ease-in-out;
+}
+
+.morph-paw {
+  animation: morphPaw 6s infinite;
+}
+
+.morph-scissors {
+  animation: morphScissors 6s infinite;
+}

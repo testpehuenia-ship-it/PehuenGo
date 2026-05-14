@@ -5,7 +5,7 @@ import { GUIA_CATEGORIAS, GUIA_ITEMS } from '@/data/guia';
 
 export default function ComerciosPage() {
   return (
-    <div className="container" style={{ paddingTop: '40px', paddingBottom: '100px' }}>
+    <div className="container" style={{ paddingTop: '40px', paddingBottom: '40px' }}>
       
       {/* Banner Principal de la Guía Local */}
       <div style={{

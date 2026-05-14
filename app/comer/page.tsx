@@ -63,7 +63,7 @@ export default function ComerPage() {
   }, [selectedComercio, cart, cartTotal]);
 
   return (
-    <div className="container" style={{ paddingTop: '40px', paddingBottom: '100px' }}>
+    <div className="container" style={{ paddingTop: '40px', paddingBottom: '40px' }}>
       
       {/* Banner Principal Responsivo */}
       <div className="responsive-banner">

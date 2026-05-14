@@ -15,7 +15,7 @@ export default function AlojarsePage() {
   };
 
   return (
-    <div className="container" style={{ paddingTop: '40px', paddingBottom: '100px' }}>
+    <div className="container" style={{ paddingTop: '40px', paddingBottom: '40px' }}>
       
       {/* Banner Principal Responsivo */}
       <div className="responsive-banner">

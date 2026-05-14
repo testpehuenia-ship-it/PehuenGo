@@ -12,7 +12,7 @@ export default function Navbar() {
       try {
         await navigator.share({
           title: 'PehueniaGO',
-          text: 'Descubrí todo Pehuenia en un solo lugar: comida, alojamiento y excursiones.',
+          text: 'Descubrí todo Pehuenia en un solo lugar: comida, alojamiento y aventuras.',
           url: window.location.origin,
         });
       } catch (error) {
