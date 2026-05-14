@@ -350,7 +350,6 @@ button {
 }
 
 .ad-slide-1 {
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=600&q=80');
   background-size: cover;
   background-position: center;
   animation: adFade1 8s infinite cubic-bezier(0.4, 0, 0.2, 1);

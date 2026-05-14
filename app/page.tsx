@@ -17,14 +17,44 @@ const BACKGROUND_IMAGES = [
   "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1200&q=80", // Winter/Cabin
 ];
 
+export const CATEGORIES_DATA = [
+  { title: "Pizzería", link: "/comer#pizzería", image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80" },
+  { title: "Hamburguesa", link: "/comer#hamburguesa", image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=400&q=80" },
+  { title: "Cervecería", link: "/comer#cervecería", image: "https://images.unsplash.com/photo-1532634922-8fe0b757fb13?auto=format&fit=crop&w=400&q=80" },
+  { title: "Roticería", link: "/comer#roticería", image: "https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?auto=format&fit=crop&w=400&q=80" },
+  { title: "Restaurante", link: "/comer#restaurante", image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80" },
+  { title: "Cabañas", link: "/alojarse#cabañas", image: "https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=400&q=80" },
+  { title: "Hoteles", link: "/alojarse#hoteles", image: "/images/hotel_pehuenia.png" },
+  { title: "Campings", link: "/alojarse#campings", image: "https://images.unsplash.com/photo-1508873696983-2dfd5898f08b?auto=format&fit=crop&w=400&q=80" },
+  { title: "Trekking", link: "/aventuras#trekking", image: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=400&q=80" },
+  { title: "A. Acuaticas", link: "/aventuras#a.-acuaticas", image: "/images/aventura_rafting.png" },
+  { title: "Cabalgatas", link: "/aventuras#cabalgatas", image: "/images/aventura_cabalgatas.png" },
+  { title: "Nieve", link: "/aventuras#nieve", image: "https://images.unsplash.com/photo-1605540436563-5bca919ae766?auto=format&fit=crop&w=400&q=80" },
+  { title: "Pesca", link: "/aventuras#pesca", image: "/images/aventura_pesca.png" },
+  { title: "Agencia de turismo", link: "/aventuras#agencia-de-turismo", image: "/images/aventura_agencia.png" }
+];
+
 export default function HomePage() {
   const [bgIndex, setBgIndex] = useState(0);
+  const [adImage, setAdImage] = useState(CATEGORIES_DATA[0].image);
 
   useEffect(() => {
     const interval = setInterval(() => {
       setBgIndex((prev) => (prev + 1) % BACKGROUND_IMAGES.length);
     }, 5000); // Change image every 5 seconds
-    return () => clearInterval(interval);
+
+    const timeout = setTimeout(() => {
+      const adInterval = setInterval(() => {
+        const randomIndex = Math.floor(Math.random() * CATEGORIES_DATA.length);
+        setAdImage(CATEGORIES_DATA[randomIndex].image);
+      }, 8000);
+      return () => clearInterval(adInterval);
+    }, 4000);
+
+    return () => {
+      clearInterval(interval);
+      clearTimeout(timeout);
+    };
   }, []);
 
   return (
@@ -223,22 +253,7 @@ export default function HomePage() {
             scrollSnapType: 'x mandatory'
           }}
         >
-          {[
-            { title: "Pizzería", link: "/comer#pizzería", image: "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=400&q=80" },
-            { title: "Hamburguesa", link: "/comer#hamburguesa", image: "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=400&q=80" },
-            { title: "Cervecería", link: "/comer#cervecería", image: "https://images.unsplash.com/photo-1532634922-8fe0b757fb13?auto=format&fit=crop&w=400&q=80" },
-            { title: "Roticería", link: "/comer#roticería", image: "https://images.unsplash.com/photo-1598514982205-f36b96d1e8d4?auto=format&fit=crop&w=400&q=80" },
-            { title: "Restaurante", link: "/comer#restaurante", image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?auto=format&fit=crop&w=400&q=80" },
-            { title: "Cabañas", link: "/alojarse#cabañas", image: "https://images.unsplash.com/photo-1510798831971-661eb04b3739?auto=format&fit=crop&w=400&q=80" },
-            { title: "Hoteles", link: "/alojarse#hoteles", image: "/images/hotel_pehuenia.png" },
-            { title: "Campings", link: "/alojarse#campings", image: "https://images.unsplash.com/photo-1508873696983-2dfd5898f08b?auto=format&fit=crop&w=400&q=80" },
-            { title: "Trekking", link: "/aventuras#trekking", image: "https://images.unsplash.com/photo-1551632811-561732d1e306?auto=format&fit=crop&w=400&q=80" },
-            { title: "A. Acuaticas", link: "/aventuras#a.-acuaticas", image: "/images/aventura_rafting.png" },
-            { title: "Cabalgatas", link: "/aventuras#cabalgatas", image: "/images/aventura_cabalgatas.png" },
-            { title: "Nieve", link: "/aventuras#nieve", image: "https://images.unsplash.com/photo-1605540436563-5bca919ae766?auto=format&fit=crop&w=400&q=80" },
-            { title: "Pesca", link: "/aventuras#pesca", image: "/images/aventura_pesca.png" },
-            { title: "Agencia de turismo", link: "/aventuras#agencia-de-turismo", image: "/images/aventura_agencia.png" }
-          ].map((cat, idx) => (
+          {CATEGORIES_DATA.map((cat, idx) => (
             <Link 
               href={cat.link} 
               key={idx} 
@@ -273,7 +288,10 @@ export default function HomePage() {
       {/* Ad Banner */}
       <section className="container" style={{ padding: '0 20px' }}>
         <div className="ad-banner-container">
-          <div className="ad-slide ad-slide-1">
+          <div 
+            className="ad-slide ad-slide-1" 
+            style={{ backgroundImage: `linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('${adImage}')` }}
+          >
             <h2 style={{ fontSize: '2.5rem', margin: 0, textShadow: '2px 2px 8px rgba(0,0,0,0.8)' }}>
               <span style={{ color: 'var(--color-green)' }}>Pehuenia</span>
               <span style={{ color: 'var(--color-orange)' }}>GO</span>
