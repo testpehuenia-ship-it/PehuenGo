@@ -11,10 +11,10 @@ import {
 } from 'lucide-react';
 
 const BACKGROUND_IMAGES = [
-  "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80", // Summer/Lake
-  "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=1200&q=80", // Food balcony
-  "https://images.unsplash.com/photo-1541410965313-d53b3c16ef17?auto=format&fit=crop&w=1200&q=80", // Autumn
-  "https://images.unsplash.com/photo-1518780664697-55e3ad937233?auto=format&fit=crop&w=1200&q=80", // Winter/Cabin
+  "/images/bg_slider_1.png",
+  "/images/bg_slider_2.png",
+  "/images/bg_slider_3.png",
+  "/images/bg_slider_4.png",
 ];
 
 export const CATEGORIES_DATA = [
@@ -206,71 +206,40 @@ export default function HomePage() {
         ))}
       </section>
 
-      {/* 2.5 PET SHOP BANNER (HUELLITAS) */}
-      <section style={{ padding: '0 20px', maxWidth: '600px', margin: '20px auto 0 auto' }}>
+      {/* 2.5 PET SHOP BANNER (PELUQUERÍA CANINA) */}
+      <section style={{ padding: '0 20px', maxWidth: '800px', margin: '20px auto 0 auto' }}>
         <a 
-          href="https://wa.me/5492942661000?text=Hola%20quiero%20turno%20en%20Huellitas" 
+          href="https://wa.me/5492944203306?text=Hola%20quiero%20turno%20en%20la%20Peluquería" 
           target="_blank" 
           rel="noopener noreferrer"
           style={{
-            backgroundColor: '#1a1a1a',
+            display: 'block',
             borderRadius: '16px',
-            height: '100px',
-            display: 'flex',
-            alignItems: 'center',
-            padding: '0 20px',
-            textDecoration: 'none',
             overflow: 'hidden',
             position: 'relative',
-            border: '2px solid var(--color-green)',
-            boxShadow: '0 4px 15px rgba(0,0,0,0.2)'
+            boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
+            transition: 'transform 0.3s',
           }}
+          className="pelu-banner-img"
         >
-          {/* Animated Dog */}
-          <div style={{ width: '80px', height: '80px', position: 'relative' }}>
-             <svg viewBox="0 0 100 100" style={{ width: '100%', height: '100%' }}>
-                <circle cx="50" cy="50" r="35" fill="var(--color-orange)" />
-                <path d="M25 35 Q15 15 35 25" fill="#a34100" />
-                <path d="M75 35 Q85 15 65 25" fill="#a34100" />
-                <circle cx="40" cy="45" r="4" fill="white" />
-                <circle cx="60" cy="45" r="4" fill="white" />
-                <circle cx="50" cy="55" r="3" fill="black" />
-                <g className="waving-paw">
-                  <circle cx="75" cy="70" r="12" fill="var(--color-green)" stroke="white" strokeWidth="2" />
-                  <circle cx="70" cy="63" r="3" fill="white" />
-                  <circle cx="75" cy="60" r="3" fill="white" />
-                  <circle cx="80" cy="63" r="3" fill="white" />
-                </g>
-             </svg>
-          </div>
-
-          <div style={{ flex: 1, padding: '0 15px', textAlign: 'center' }}>
-            <div style={{ color: 'var(--color-green)', fontSize: '1.1rem', fontWeight: 800, fontFamily: 'var(--font-oswald), sans-serif', letterSpacing: '1px' }}>
-              HUELLITAS
-            </div>
-            <div style={{ color: 'white', fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.5px' }}>
-              ESTÉTICA CANINA
-            </div>
-            <div style={{ color: '#f1c40f', fontSize: '1.2rem', fontWeight: 800, marginTop: '4px', textShadow: '0 0 10px rgba(241,196,15,0.3)' }}>
-              02942 661000
-            </div>
-          </div>
-
-          {/* Morphing Logo (Paw to Scissors Heart) */}
-          <div style={{ width: '70px', height: '70px', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <div className="morph-paw" style={{ position: 'absolute' }}>
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="var(--color-green)">
-                <path d="M4.5 10c-1.4 0-2.5 1.1-2.5 2.5s1.1 2.5 2.5 2.5 2.5-1.1 2.5-2.5-1.1-2.5-2.5-2.5zm15 0c-1.4 0-2.5 1.1-2.5 2.5s1.1 2.5 2.5 2.5 2.5-1.1 2.5-2.5-1.1-2.5-2.5-2.5zm-12-6c-1.4 0-2.5 1.1-2.5 2.5s1.1 2.5 2.5 2.5 2.5-1.1 2.5-2.5-1.1-2.5-2.5-2.5zm9 0c-1.4 0-2.5 1.1-2.5 2.5s1.1 2.5 2.5 2.5 2.5-1.1 2.5-2.5-1.1-2.5-2.5-2.5zm-4.5 10c-1.9 0-3.5 1.6-3.5 3.5s1.6 3.5 3.5 3.5 3.5-1.6 3.5-3.5-1.6-3.5-3.5-3.5z" />
-              </svg>
-            </div>
-            <div className="morph-scissors" style={{ position: 'absolute', opacity: 0 }}>
-              <svg width="45" height="45" viewBox="0 0 24 24">
-                <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" fill="var(--color-orange)" />
-                <path d="M9 7L15 13M15 7L9 13" stroke="white" strokeWidth="2" strokeLinecap="round" />
-                <circle cx="9" cy="7" r="1.5" fill="white" />
-                <circle cx="15" cy="7" r="1.5" fill="white" />
-              </svg>
-            </div>
+          <Image 
+            src="/images/pelubannerHH.png" 
+            alt="Peluquería Canina" 
+            width={800} 
+            height={160} 
+            style={{ width: '100%', height: 'auto', display: 'block' }} 
+          />
+          {/* Pulsing Phone Number Highlight Overlay */}
+          <div style={{
+            position: 'absolute',
+            right: '12%',
+            top: '46%',
+            color: '#4a3728',
+            fontSize: '1.2rem',
+            fontWeight: 800,
+            pointerEvents: 'none'
+          }} className="phone-highlight">
+            2944203306
           </div>
         </a>
       </section>
