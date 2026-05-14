@@ -11,10 +11,10 @@ import {
 } from 'lucide-react';
 
 const BACKGROUND_IMAGES = [
-  "/images/bg_slider_1.png",
-  "/images/bg_slider_2.png",
-  "/images/bg_slider_3.png",
-  "/images/bg_slider_4.png",
+  "/images/bg_slider_1.jpg",
+  "/images/bg_slider_2.jpg",
+  "/images/bg_slider_3.jpg",
+  "/images/bg_slider_4.jpg",
 ];
 
 export const CATEGORIES_DATA = [
